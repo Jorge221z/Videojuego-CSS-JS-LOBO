@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background: rgb(0,4,83);
+    background: -moz-linear-gradient(90deg, rgba(0,4,83,1) 0%, rgba(2,0,36,1) 10%, rgba(0,117,255,1) 45%, rgba(0,117,255,1) 55%, rgba(2,0,36,1) 90%, rgba(0,4,83,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,4,83,1) 0%, rgba(2,0,36,1) 10%, rgba(0,117,255,1) 45%, rgba(0,117,255,1) 55%, rgba(2,0,36,1) 90%, rgba(0,4,83,1) 100%);
+    background: linear-gradient(90deg, rgba(0,4,83,1) 0%, rgba(2,0,36,1) 10%, rgba(0,117,255,1) 45%, rgba(0,117,255,1) 55%, rgba(2,0,36,1) 90%, rgba(0,4,83,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000453",endColorstr="#000453",GradientType=1);
+    box-sizing: border-box;
+}
+
+#game {
+    box-sizing: content-box;
+    width: 500px;
+    height: 200px;
+    border: 1px solid blue;
+    margin: 10px auto;
+    background-color: #fff;
+    background: url(assets/orig.png);
+    background-size: 360px;
+}
+
+
+/*1152 * 128 . 9 steps*/
+#character {
+    background: url(assets/Run.png) repeat-x;
+    height: 128px;
+    width: 120px;
+    top: 71px;
+    background-position: 0;
+    position: relative;
+}
+
+
+
+@keyframes walk {
+    0% { background-position: 0px;
+        }
+    100% { background-position: -1152px; 
+}
+}
+
+.walking {
+    animation: walk 0.6s steps(9) infinite ;
+}
+
+@keyframes jump {
+    0% {top: 71px; }
+    30% {top: 10px;}
+    70% {top: 10px;}
+    100% {top: 71px;}
+}
+
+.jumping {
+    animation: jump 0.6s linear;
+}
+
+
+
+#block {
+    background-color: rgb(0, 255, 119);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 52px;
+    left: 480px;
+    animation: block 1s linear infinite;
+}
+
+
+@keyframes block {
+    0% { left: 500px; }
+    100% { left: -20px
+    }
+}
+
